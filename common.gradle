@@ -92,16 +92,18 @@ android {
 
 dependencies {
     if (theme != null) implementation(theme)
-    // L'extension a besoin du coeur
-    implementation(project(":core"))
+    implementation(project(":core")) // Les utilitaires (Date, Json...)
 
-    // 👇 DÉPENDANCES DIRECTES (Plus d'injection magique depuis la racine)
+    // 👇 LE MOTEUR MANQUANT (Ajoute cette ligne !)
+    compileOnly "com.github.tachiyomiorg:extensions-lib:1.4.2"
+
+    // Les outils standards (déjà présents)
     compileOnly "com.squareup.okhttp3:okhttp:5.0.0-alpha.11"
     compileOnly "io.reactivex:rxjava:1.3.8"
     compileOnly "io.reactivex:rxandroid:1.2.1"
     compileOnly "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
     compileOnly "org.jsoup:jsoup:1.15.4"
-    compileOnly "org.json:json:20210307" // Version publique
+    compileOnly "org.json:json:20210307"
 }
 
 
