@@ -95,8 +95,8 @@ dependencies {
     implementation(project(":core"))
 
     // 👇 CORRECTION : On remplace 'tachiyomiorg' (mort) par 'keiyoushi' (vivant)
-    compileOnly "com.github.keiyoushi:extensions-lib:1.4.2"
-
+    compileOnly "com.github.keiyoushi:extensions-lib:1.5.1"
+    
     // Le reste ne change pas
     compileOnly "com.squareup.okhttp3:okhttp:5.0.0-alpha.11"
     compileOnly "io.reactivex:rxjava:1.3.8"
