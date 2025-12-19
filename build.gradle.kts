@@ -14,17 +14,21 @@ allprojects {
     }
 }
 
-// 👇 LA SOLUTION MAGIQUE : On injecte les dépendances dans TOUS les sous-projets (Core + Extension)
 subprojects {
     afterEvaluate {
-        dependencies {
-            // On ajoute "compileOnly" pour ne pas alourdir l'APK, mais permettre la compilation
-            add("compileOnly", "com.squareup.okhttp3:okhttp:5.0.0-alpha.11")
-            add("compileOnly", "io.reactivex:rxjava:1.3.8")
-            add("compileOnly", "io.reactivex:rxandroid:1.2.1")
-            add("compileOnly", "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
-            add("compileOnly", "org.jsoup:jsoup:1.15.4")
-            add("compileOnly", "com.github.infinum:org.json:20210307") // Parfois nécessaire pour le core
+        // 👇 FILTRE DE SÉCURITÉ : On vérifie si c'est un projet Android (Library ou App)
+        // Cela évite de planter sur les dossiers vides comme ":src"
+        val isAndroid = plugins.hasPlugin("com.android.application") || plugins.hasPlugin("com.android.library")
+
+        if (isAndroid) {
+            dependencies {
+                add("compileOnly", "com.squareup.okhttp3:okhttp:5.0.0-alpha.11")
+                add("compileOnly", "io.reactivex:rxjava:1.3.8")
+                add("compileOnly", "io.reactivex:rxandroid:1.2.1")
+                add("compileOnly", "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+                add("compileOnly", "org.jsoup:jsoup:1.15.4")
+                add("compileOnly", "com.github.infinum:org.json:20210307")
+            }
         }
     }
 }
