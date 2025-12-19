@@ -1,8 +1,15 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
 /**
  * Add or remove modules to load as needed for local development here.
  */
 loadAllIndividualExtensions()
-// loadIndividualExtension("all", "mangadex")
 
 /**
  * ===================================== COMMON CONFIGURATION ======================================
@@ -24,9 +31,6 @@ fun loadAllIndividualExtensions() {
             include("src:${dir.name}:${subdir.name}")
         }
     }
-}
-fun loadIndividualExtension(lang: String, name: String) {
-    include("src:${lang}:${name}")
 }
 
 fun File.eachDir(block: (File) -> Unit) {
