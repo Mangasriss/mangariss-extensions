@@ -56,11 +56,8 @@ android {
         }
     }
 
-    // J'ai supprimé le bloc signingConfigs ici car tu n'as pas de fichier .jks sur GitHub
-
     buildTypes {
         release {
-            // J'ai supprimé la référence à signingConfig et vcsInfo qui plantaient
             minifyEnabled false
         }
     }
@@ -95,9 +92,6 @@ android {
 dependencies {
     if (theme != null) implementation(theme)
     implementation(project(":core"))
-    // J'ai commenté libs.bundles.common car on n'a pas accès au catalogue de version complexe
-    // Si ça manque, on ajoutera les dépendances manuellement, mais pour l'instant essayons sans.
-    // compileOnly(libs.bundles.common) 
 }
 
 // Tâches utilitaires pour le Manifeste
@@ -114,13 +108,6 @@ tasks.register("writeManifestFile") {
         if (!tempFile.exists()) {
             tempFile.write('<?xml version="1.0" encoding="utf-8"?>\n<manifest />\n')
         }
-    }
-}
-
-afterEvaluate {
-    tasks.withType(com.android.build.gradle.tasks.PackageAndroidArtifact).configureEach {
-        createdBy = ""
-        doFirst { appMetadata.asFile.getOrNull()?.write('') }
     }
 }
 
