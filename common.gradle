@@ -92,12 +92,12 @@ android {
 
 dependencies {
     if (theme != null) implementation(theme)
-    implementation(project(":core")) // Les utilitaires (Date, Json...)
+    implementation(project(":core"))
 
-    // 👇 LE MOTEUR MANQUANT (Ajoute cette ligne !)
-    compileOnly "com.github.tachiyomiorg:extensions-lib:1.4.2"
+    // 👇 CORRECTION : On remplace 'tachiyomiorg' (mort) par 'keiyoushi' (vivant)
+    compileOnly "com.github.keiyoushi:extensions-lib:1.4.2"
 
-    // Les outils standards (déjà présents)
+    // Le reste ne change pas
     compileOnly "com.squareup.okhttp3:okhttp:5.0.0-alpha.11"
     compileOnly "io.reactivex:rxjava:1.3.8"
     compileOnly "io.reactivex:rxandroid:1.2.1"
@@ -105,7 +105,6 @@ dependencies {
     compileOnly "org.jsoup:jsoup:1.15.4"
     compileOnly "org.json:json:20210307"
 }
-
 
 // Tâches utilitaires pour le Manifeste
 tasks.register("copyManifestFile", Copy) {
