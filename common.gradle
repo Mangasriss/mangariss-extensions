@@ -94,9 +94,12 @@ dependencies {
     if (theme != null) implementation(theme)
     implementation(project(":core"))
 
-    compileOnly "com.github.aniyomiorg:extensions-lib:1.4.2"
+    // 👇 REMPLACEMENT MANUEL DU "BUNDLE" CASSÉ
     
-    // Le reste ne change pas
+    // 1. Le Moteur (Miroir de sauvegarde stable pour la v1.4.2)
+    compileOnly "com.github.jobobby04:extensions-lib:1.4.2"
+
+    // 2. Les Outils (que le bundle contenait aussi)
     compileOnly "com.squareup.okhttp3:okhttp:5.0.0-alpha.11"
     compileOnly "io.reactivex:rxjava:1.3.8"
     compileOnly "io.reactivex:rxandroid:1.2.1"
