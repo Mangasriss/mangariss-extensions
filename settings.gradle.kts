@@ -16,11 +16,12 @@ loadAllIndividualExtensions()
  */
 include(":core")
 
+// 🔴 ON DÉSACTIVE CES LIGNES (Ce sont elles qui causent l'erreur)
 // Load all modules under /lib
-File(rootDir, "lib").eachDir { include("lib:${it.name}") }
+// File(rootDir, "lib").eachDir { include("lib:${it.name}") }
 
 // Load all modules under /lib-multisrc
-File(rootDir, "lib-multisrc").eachDir { include("lib-multisrc:${it.name}") }
+// File(rootDir, "lib-multisrc").eachDir { include("lib-multisrc:${it.name}") }
 
 /**
  * ======================================== HELPER FUNCTION ========================================
