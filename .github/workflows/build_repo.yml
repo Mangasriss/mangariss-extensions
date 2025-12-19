@@ -32,6 +32,12 @@ jobs:
         # La commande gradle standard pour compiler juste ton extension
         run: ./gradlew :src:fr:mangariss:assembleDebug
 
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Build APK
+        run: ./gradlew :src:fr:mangariss:assembleDebug
+
       - name: Préparer le dossier Repo
         run: |
           mkdir repo_dist
@@ -60,3 +66,4 @@ jobs:
           force_orphan: true    # Écrase l'historique de la branche repo (plus propre)
           user_name: 'GitHub Actions'
           user_email: 'actions@github.com'
+
