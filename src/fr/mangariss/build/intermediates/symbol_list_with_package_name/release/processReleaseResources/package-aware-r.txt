@@ -1,0 +1,2 @@
+eu.kanade.tachiyomi.extension.fr.mangariss
+mipmap ic_launcher

@@ -1,0 +1,1 @@
+eu.kanade.tachiyomi.extension.fr.mangariss:mipmap/ic_launcher = 0x7f010000

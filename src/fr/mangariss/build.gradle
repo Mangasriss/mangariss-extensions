@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlinx-serialization'
+
+def getCommitCount = { ->
+    try {
+        // Calcule le nombre total de commits pour avoir un numéro unique qui augmente toujours
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine 'git', 'rev-list', '--count', 'HEAD'
+            standardOutput = stdout
+        }
+        return stdout.toString().trim().toInteger()
+    } catch (ignored) {
+        return 1 // Valeur par défaut si git plante (rare)
+    }
+}
+
+ext {
+    extName = 'Mangariss'
+    extClass = '.Mangariss'
+    extVersionCode = getCommitCount() + 100 // On ajoute 100 pour être large
+    isNsfw = false
+}
+
+apply from: "$rootDir/common.gradle"
+
+android {
+    namespace 'eu.kanade.tachiyomi.extension.fr.mangariss'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 21
+    }
+}
+
+
+dependencies {
+    // TOUJOURS compileOnly pour Mihon
+    compileOnly "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
+    compileOnly "com.squareup.okhttp3:okhttp:5.0.0-alpha.11"
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.jetbrains.kotlin:kotlin-stdlib:1.7.20'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20'
+    }
+}

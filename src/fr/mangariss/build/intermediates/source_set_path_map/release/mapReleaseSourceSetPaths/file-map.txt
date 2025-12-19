@@ -1,0 +1,8 @@
+eu.kanade.tachiyomi.extension.fr.mangariss-release-0 D:\Pictures\extensions-source\core\build\intermediates\packaged_res\release\packageReleaseResources
+eu.kanade.tachiyomi.extension.fr.mangariss-pngs-1 D:\Pictures\extensions-source\src\fr\mangariss\build\generated\res\pngs\release
+eu.kanade.tachiyomi.extension.fr.mangariss-updated_navigation_xml-2 D:\Pictures\extensions-source\src\fr\mangariss\build\generated\updated_navigation_xml\release
+eu.kanade.tachiyomi.extension.fr.mangariss-packageReleaseResources-3 D:\Pictures\extensions-source\src\fr\mangariss\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+eu.kanade.tachiyomi.extension.fr.mangariss-packageReleaseResources-4 D:\Pictures\extensions-source\src\fr\mangariss\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+eu.kanade.tachiyomi.extension.fr.mangariss-release-5 D:\Pictures\extensions-source\src\fr\mangariss\build\intermediates\merged_res\release\mergeReleaseResources
+eu.kanade.tachiyomi.extension.fr.mangariss-mangariss-6 D:\Pictures\extensions-source\src\fr\mangariss\res
+eu.kanade.tachiyomi.extension.fr.mangariss-release-7 D:\Pictures\extensions-source\src\fr\mangariss\src\release\res

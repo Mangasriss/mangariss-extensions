@@ -1,0 +1,8 @@
+eu.kanade.tachiyomi.extension.fr.mangariss-debug-0 D:\Pictures\extensions-source\core\build\intermediates\packaged_res\debug\packageDebugResources
+eu.kanade.tachiyomi.extension.fr.mangariss-pngs-1 D:\Pictures\extensions-source\src\fr\mangariss\build\generated\res\pngs\debug
+eu.kanade.tachiyomi.extension.fr.mangariss-updated_navigation_xml-2 D:\Pictures\extensions-source\src\fr\mangariss\build\generated\updated_navigation_xml\debug
+eu.kanade.tachiyomi.extension.fr.mangariss-packageDebugResources-3 D:\Pictures\extensions-source\src\fr\mangariss\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+eu.kanade.tachiyomi.extension.fr.mangariss-packageDebugResources-4 D:\Pictures\extensions-source\src\fr\mangariss\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+eu.kanade.tachiyomi.extension.fr.mangariss-debug-5 D:\Pictures\extensions-source\src\fr\mangariss\build\intermediates\merged_res\debug\mergeDebugResources
+eu.kanade.tachiyomi.extension.fr.mangariss-mangariss-6 D:\Pictures\extensions-source\src\fr\mangariss\res
+eu.kanade.tachiyomi.extension.fr.mangariss-debug-7 D:\Pictures\extensions-source\src\fr\mangariss\src\debug\res

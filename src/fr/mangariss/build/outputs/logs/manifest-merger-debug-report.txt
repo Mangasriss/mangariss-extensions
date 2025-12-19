@@ -1,0 +1,73 @@
+-- Merging decision tree log ---
+provider#eu.kanade.tachiyomi.extension.ExtensionProvider
+INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:10:9-13:40
+	android:authorities
+		INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:12:13-60
+	android:exported
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:13:13-37
+	android:name
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:11:13-75
+manifest
+ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:2:1-22:12
+INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:2:1-22:12
+INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:2:1-22:12
+INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:2:1-22:12
+MERGED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-21:12
+	package
+		INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:2:11-69
+application
+ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:5:5-20:19
+INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:5:5-20:19
+MERGED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:5-19:19
+MERGED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:5-19:19
+	android:extractNativeLibs
+		INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml
+	android:label
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:6:9-34
+		REJECTED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:12:9-35
+	android:allowBackup
+		ADDED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:10:9-36
+	android:icon
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:7:9-43
+	tools:replace
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:8:9-38
+meta-data#tachiyomi.extension.class
+ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:15:9-18:45
+MERGED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:13:9-15:43
+MERGED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:13:9-15:43
+	tools:replace
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:18:13-42
+	android:value
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:17:13-81
+		REJECTED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:15:13-40
+	android:name
+		ADDED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml:16:13-53
+uses-sdk
+INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml
+INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml
+MERGED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+	android:targetSdkVersion
+		INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Pictures\extensions-source\src\fr\mangariss\build\tempAndroidManifest.xml
+uses-feature#tachiyomi.extension
+ADDED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:5-56
+	android:name
+		ADDED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:19-53
+meta-data#tachiyomi.extension.nsfw
+ADDED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:16:9-18:39
+	android:value
+		ADDED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:18:13-36
+	android:name
+		ADDED from [:core] D:\Pictures\extensions-source\core\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:17:13-52
