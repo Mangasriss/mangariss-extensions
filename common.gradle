@@ -94,8 +94,7 @@ dependencies {
     if (theme != null) implementation(theme)
     implementation(project(":core"))
 
-    // On utilise 'master-SNAPSHOT' pour prendre le tout dernier code disponible
-    compileOnly "com.github.keiyoushi:extensions-lib:master-SNAPSHOT"
+    compileOnly "com.github.keiyoushi:extensions-lib:main-SNAPSHOT"
 
     // Le reste ne change pas
     compileOnly "com.squareup.okhttp3:okhttp:5.0.0-alpha.11"
