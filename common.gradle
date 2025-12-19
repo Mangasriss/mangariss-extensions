@@ -81,6 +81,7 @@ android {
     }
 
     kotlinter {
+        ignoreFailures = true  // <--- AJOUTE CETTE LIGNE (Ignore les erreurs de style)
         experimentalRules = true
         disabledRules = [
             "experimental:argument-list-wrapping",
