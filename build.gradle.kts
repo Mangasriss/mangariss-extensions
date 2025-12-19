@@ -16,8 +16,6 @@ allprojects {
 
 subprojects {
     afterEvaluate {
-        // 👇 FILTRE DE SÉCURITÉ : On vérifie si c'est un projet Android (Library ou App)
-        // Cela évite de planter sur les dossiers vides comme ":src"
         val isAndroid = plugins.hasPlugin("com.android.application") || plugins.hasPlugin("com.android.library")
 
         if (isAndroid) {
@@ -27,7 +25,8 @@ subprojects {
                 add("compileOnly", "io.reactivex:rxandroid:1.2.1")
                 add("compileOnly", "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
                 add("compileOnly", "org.jsoup:jsoup:1.15.4")
-                add("compileOnly", "com.github.infinum:org.json:20210307")
+                // 👇 REMPLACEMENT : On utilise la version officielle publique au lieu de la version bloquée
+                add("compileOnly", "org.json:json:20210307") 
             }
         }
     }
