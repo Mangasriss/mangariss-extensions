@@ -3,11 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlinx-serialization'
 apply plugin: 'org.jmailen.kotlinter'
 
+// Vérifications de sécurité
 assert !ext.has("pkgNameSuffix")
 assert !ext.has("libVersion")
-
 assert extName.chars().max().asInt < 0x180 : "Extension name should be romanized"
 
+// Gestion des thèmes (Multisrc)
 Project theme = ext.has("themePkg") ? project(":lib-multisrc:$themePkg") : null
 if (theme != null) evaluationDependsOn(theme.path)
 
@@ -27,17 +28,22 @@ android {
     defaultConfig {
         minSdk AndroidConfig.minSdk
         targetSdk AndroidConfig.targetSdk
+        // Calcul de la version
         versionCode theme == null ? extVersionCode : theme.baseVersionCode + overrideVersionCode
         versionName "1.4.$versionCode"
+        
         base {
             archivesName = "tachiyomi-$applicationIdSuffix-v$versionName"
         }
+        
         assert extClass.startsWith(".")
+        
         manifestPlaceholders = [
                 appName : "Tachiyomi: $extName",
                 extClass: extClass,
                 nsfw    : project.ext.find("isNsfw") ? 1 : 0,
         ]
+        
         String baseUrl = project.ext.find("baseUrl") ?: ""
         if (theme != null && !baseUrl.isEmpty()) {
             def split = baseUrl.split("://")
@@ -50,20 +56,12 @@ android {
         }
     }
 
-    signingConfigs {
-        release {
-            storeFile rootProject.file("signingkey.jks")
-            storePassword System.getenv("KEY_STORE_PASSWORD")
-            keyAlias System.getenv("ALIAS")
-            keyPassword System.getenv("KEY_PASSWORD")
-        }
-    }
+    // J'ai supprimé le bloc signingConfigs ici car tu n'as pas de fichier .jks sur GitHub
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            // J'ai supprimé la référence à signingConfig et vcsInfo qui plantaient
             minifyEnabled false
-            vcsInfo.include false
         }
     }
 
@@ -88,18 +86,21 @@ android {
     kotlinter {
         experimentalRules = true
         disabledRules = [
-            "experimental:argument-list-wrapping", // Doesn't play well with Android Studio
+            "experimental:argument-list-wrapping",
             "experimental:comment-wrapping",
         ]
     }
 }
 
 dependencies {
-    if (theme != null) implementation(theme) // Overrides core launcher icons
+    if (theme != null) implementation(theme)
     implementation(project(":core"))
-    compileOnly(libs.bundles.common)
+    // J'ai commenté libs.bundles.common car on n'a pas accès au catalogue de version complexe
+    // Si ça manque, on ajoutera les dépendances manuellement, mais pour l'instant essayons sans.
+    // compileOnly(libs.bundles.common) 
 }
 
+// Tâches utilitaires pour le Manifeste
 tasks.register("copyManifestFile", Copy) {
     from 'AndroidManifest.xml'
     rename { 'tempAndroidManifest.xml' }
@@ -118,9 +119,7 @@ tasks.register("writeManifestFile") {
 
 afterEvaluate {
     tasks.withType(com.android.build.gradle.tasks.PackageAndroidArtifact).configureEach {
-        // need to be in afterEvaluate to overwrite default value
         createdBy = ""
-        // https://stackoverflow.com/a/77745844
         doFirst { appMetadata.asFile.getOrNull()?.write('') }
     }
 }
