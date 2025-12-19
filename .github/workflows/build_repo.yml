@@ -8,13 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # INDISPENSABLE pour pouvoir pousser sur la branche 'repo'
+      contents: write # INDISPENSABLE pour la branche repo
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Important pour compter les commits correctement
+          fetch-depth: 0 # Pour compter les commits
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -28,12 +28,8 @@ jobs:
           count=$(git rev-list --count HEAD)
           echo "VERSION_CODE=$((count + 100))" >> $GITHUB_ENV
 
-      - name: Build APK
-        # La commande gradle standard pour compiler juste ton extension
-        run: ./gradlew :src:fr:mangariss:assembleDebug
-
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+      - name: Rendre gradlew exécutable
+        run: chmod +x gradlew # <--- LA CORRECTION EST ICI
 
       - name: Build APK
         run: ./gradlew :src:fr:mangariss:assembleDebug
@@ -42,15 +38,14 @@ jobs:
         run: |
           mkdir repo_dist
           
-          # 1. Copier et renommer l'APK
+          # Copie et renomme l'APK
           cp src/fr/mangariss/build/outputs/apk/debug/mangariss-debug.apk repo_dist/mangariss.apk
           
-          # 2. Copier l'icône (Si elle existe, sinon ignore)
+          # Copie l'icône (ignore si absente)
           cp src/fr/mangariss/res/mipmap-xxxhdpi/ic_launcher.png repo_dist/icon.png || true
 
       - name: Générer index.json
         run: python3 generate_repo.py
-        # On passe le code de version au script python
         env:
           VERSION_CODE: ${{ env.VERSION_CODE }}
 
@@ -62,8 +57,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./repo_dist
-          publish_branch: repo  # C'est ici qu'on crée la branche magique
-          force_orphan: true    # Écrase l'historique de la branche repo (plus propre)
+          publish_branch: repo
+          force_orphan: true
           user_name: 'GitHub Actions'
           user_email: 'actions@github.com'
-
