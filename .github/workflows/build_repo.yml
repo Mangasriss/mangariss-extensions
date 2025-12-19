@@ -32,7 +32,8 @@ jobs:
         run: chmod +x gradlew # <--- LA CORRECTION EST ICI
 
       - name: Build APK
-        run: ./gradlew :src:fr:mangariss:assembleDebug
+        # On ajoute 'clean' pour forcer la reconstruction totale du Core
+        run: ./gradlew clean :src:fr:mangariss:assembleDebug
 
       - name: Préparer le dossier Repo
         run: |
