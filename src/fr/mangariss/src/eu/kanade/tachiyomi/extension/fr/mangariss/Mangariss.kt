@@ -95,7 +95,7 @@ class Mangariss : HttpSource() {
     data class MangaDto(
         val id: String,
         val title: String,
-        val cover: String,
+        val cover: String
     )
 
     @Serializable
@@ -103,7 +103,7 @@ class Mangariss : HttpSource() {
         val title: String,
         val author: String = "Inconnu",
         val cover: String,
-        val chapters: List<ChapterDto>,
+        val chapters: List<ChapterDto>
     )
 
     @Serializable
@@ -111,7 +111,7 @@ class Mangariss : HttpSource() {
         val number: String,
         val title: String,
         val folder_url: String,
-        val pages_count: Int,
+        val pages_count: Int
     )
 
     // =======================
