@@ -25,6 +25,13 @@ with open("output.json", encoding="utf-8") as f:
 
 index_min_data = []
 
+
+def to_int(value):
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return value
+
 for apk in REPO_APK_DIR.iterdir():
     badging = subprocess.check_output(
         [
@@ -77,9 +84,9 @@ for apk in REPO_APK_DIR.iterdir():
             {
                 "name": source["name"],
                 "lang": source["lang"],
-                "id": source["id"],
+                "id": to_int(source["id"]),
                 "baseUrl": source["baseUrl"],
-                "versionId": source["versionId"],
+                "versionId": to_int(source["versionId"]),
             }
         )
 
