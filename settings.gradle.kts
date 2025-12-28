@@ -1,0 +1,2 @@
+// loadAllIndividualExtensions()
+loadIndividualExtension("fr", "mangariss")

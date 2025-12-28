@@ -1,0 +1,4 @@
+signingkey.jks
+signingkey.b64
+.gradle/
+**/build/
