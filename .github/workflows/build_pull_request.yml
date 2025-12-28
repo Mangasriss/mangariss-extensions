@@ -74,6 +74,9 @@ jobs:
         with:
           cache-read-only: true
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Build extensions (${{ matrix.chunk.number }})
         env:
           MODULES: ${{ join(matrix.chunk.modules, ' ') }}
