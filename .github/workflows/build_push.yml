@@ -161,4 +161,5 @@ jobs:
         run: |
           cd repo
           python ../main/.github/scripts/merge-repo.py "$DELETE"
+          chmod +x ../main/.github/scripts/commit-repo.sh
           ../main/.github/scripts/commit-repo.sh
