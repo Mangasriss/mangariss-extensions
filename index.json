@@ -2,10 +2,10 @@
   {
     "name": "Mangariss",
     "pkg": "eu.kanade.tachiyomi.extension.fr.mangariss",
-    "apk": "tachiyomi-null-v1.4.13.apk",
+    "apk": "tachiyomi-null-v1.4.16.apk",
     "lang": "fr",
-    "code": 13,
-    "version": "1.4.13",
+    "code": 16,
+    "version": "1.4.16",
     "nsfw": 0,
     "sources": [
       {
