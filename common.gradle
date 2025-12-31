@@ -40,7 +40,7 @@ android {
         base {
             archivesName = "tachiyomi-$applicationIdSuffix-v$versionName"
         }
-        assert extClass.startsWith(".")
+        assert extClass.startsWith(".") || extClass.contains(".") : "extClass must be a relative or fully-qualified class name"
         manifestPlaceholders = [
                 appName : "Tachiyomi: $extName",
                 extClass: extClass,
