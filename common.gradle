@@ -8,6 +8,13 @@ assert !ext.has("libVersion")
 
 assert extName.chars().max().asInt < 0x180 : "Extension name should be romanized"
 
+if (!ext.has("applicationIdSuffix")) {
+    def parts = project.path.split(":")
+    if (parts.length >= 4) {
+        ext.applicationIdSuffix = "${parts[2]}.${parts[3]}"
+    }
+}
+
 Project theme = ext.has("themePkg") ? project(":lib-multisrc:$themePkg") : null
 if (theme != null) evaluationDependsOn(theme.path)
 
