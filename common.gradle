@@ -34,6 +34,7 @@ android {
     defaultConfig {
         minSdk AndroidConfig.minSdk
         targetSdk AndroidConfig.targetSdk
+        applicationIdSuffix = project.ext.applicationIdSuffix
         versionCode theme == null ? extVersionCode : theme.baseVersionCode + overrideVersionCode
         versionName "1.4.$versionCode"
         base {
