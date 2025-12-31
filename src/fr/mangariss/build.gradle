@@ -6,6 +6,7 @@ ext {
     extName = 'Mangariss'
     extClass = '.Mangariss'
     extVersionCode = (System.getenv("EXT_VERSION_CODE") ?: "1").toInteger()
+    applicationIdSuffix = 'fr.mangariss'
     isNsfw = false
 }
 
