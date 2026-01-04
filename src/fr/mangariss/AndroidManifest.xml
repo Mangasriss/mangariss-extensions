@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:icon="@mipmap/ic_launcher"
-        tools:replace="android:label">
+        android:icon="@mipmap/ic_launcher">
 
         <provider
             android:name="eu.kanade.tachiyomi.extension.ExtensionProvider"
