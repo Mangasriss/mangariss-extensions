@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:label="Mangariss"
         android:icon="@mipmap/ic_launcher"
         tools:replace="android:label">
 
