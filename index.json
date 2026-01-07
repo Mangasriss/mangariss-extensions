@@ -2,18 +2,20 @@
   {
     "name": "Tachiyomi: Mangariss",
     "pkg": "eu.kanade.tachiyomi.extension.fr.mangariss",
-    "apk": "tachiyomi-fr.mangariss-v1.4.26.apk",
+    "apk": "tachiyomi-fr.mangariss-v1.4.27.apk",
     "lang": "fr",
-    "code": 26,
-    "version": "1.4.26",
+    "code": 27,
+    "version": "1.4.27",
     "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
     "sources": [
       {
         "name": "Mangariss",
         "lang": "fr",
         "id": "8891634766264956418",
         "baseUrl": "https://mangasriss.github.io/mangariss-bot",
-        "versionId": "1"
+        "versionId": 1
       }
     ]
   }
