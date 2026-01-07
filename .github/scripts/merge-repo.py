@@ -25,7 +25,7 @@ shutil.copytree(src=LOCAL_REPO.joinpath("icon"), dst=REMOTE_REPO.joinpath("icon"
 with REMOTE_REPO.joinpath("index.json").open() as remote_index_file:
     remote_index = json.load(remote_index_file)
 
-with LOCAL_REPO.joinpath("index.min.json").open() as local_index_file:
+with LOCAL_REPO.joinpath("index.json").open() as local_index_file:
     local_index = json.load(local_index_file)
 
 index = [
@@ -38,12 +38,33 @@ index.sort(key=lambda x: x["pkg"])
 with REMOTE_REPO.joinpath("index.json").open("w", encoding="utf-8") as index_file:
     json.dump(index, index_file, ensure_ascii=False, indent=2)
 
+index_min = []
 for item in index:
+    min_item = {
+        "name": item["name"],
+        "pkg": item["pkg"],
+        "apk": item["apk"],
+        "lang": item["lang"],
+        "code": item["code"],
+        "version": item["version"],
+        "nsfw": item["nsfw"],
+        "sources": [],
+    }
     for source in item["sources"]:
-        source.pop("versionId", None)
+        min_item["sources"].append(
+            {
+                "name": source["name"],
+                "lang": source["lang"],
+                "id": source["id"],
+                "baseUrl": source["baseUrl"],
+            }
+        )
+    index_min.append(min_item)
+
+index_min.sort(key=lambda x: x["pkg"])
 
 with REMOTE_REPO.joinpath("index.min.json").open("w", encoding="utf-8") as index_min_file:
-    json.dump(index, index_min_file, ensure_ascii=False, separators=(",", ":"))
+    json.dump(index_min, index_min_file, ensure_ascii=False, separators=(",", ":"))
 
 with REMOTE_REPO.joinpath("index.html").open("w", encoding="utf-8") as index_html_file:
     index_html_file.write('<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>apks</title>\n</head>\n<body>\n<pre>\n')

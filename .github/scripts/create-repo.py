@@ -23,6 +23,7 @@ REPO_ICON_DIR.mkdir(parents=True, exist_ok=True)
 with open("output.json", encoding="utf-8") as f:
     inspector_data = json.load(f)
 
+index_data = []
 index_min_data = []
 
 
@@ -80,11 +81,24 @@ for apk in REPO_APK_DIR.iterdir():
                 "lang": source["lang"],
                 "id": str(source["id"]),
                 "baseUrl": source["baseUrl"],
-                "versionId": str(source["versionId"]),
             }
         )
 
     index_min_data.append(min_data)
+    index_data.append(
+        {
+            **common_data,
+            "hasReadme": 0,
+            "hasChangelog": 0,
+            "sources": sources,
+        }
+    )
+
+index_data.sort(key=lambda x: x["pkg"])
+index_min_data.sort(key=lambda x: x["pkg"])
+
+with REPO_DIR.joinpath("index.json").open("w", encoding="utf-8") as index_file:
+    json.dump(index_data, index_file, ensure_ascii=False, indent=2)
 
 with REPO_DIR.joinpath("index.min.json").open("w", encoding="utf-8") as index_file:
     json.dump(index_min_data, index_file, ensure_ascii=False, separators=(",", ":"))
