@@ -156,10 +156,7 @@ jobs:
           persist-credentials: true
 
       - name: Merge and deploy repo
-        env:
-          DELETE: ${{ needs.prepare.outputs.delete }}
         run: |
           cd repo
-          python ../main/.github/scripts/merge-repo.py "$DELETE"
           chmod +x ../main/.github/scripts/commit-repo.sh
           ../main/.github/scripts/commit-repo.sh
