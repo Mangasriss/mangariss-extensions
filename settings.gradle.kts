@@ -3,6 +3,7 @@
  */
 // loadAllIndividualExtensions()
 loadIndividualExtension("fr", "mangariss")
+loadIndividualExtension("fr", "mangamoins")
 
 /**
  * ===================================== COMMON CONFIGURATION ======================================
