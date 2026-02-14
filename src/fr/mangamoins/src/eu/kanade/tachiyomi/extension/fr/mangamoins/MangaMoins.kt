@@ -139,7 +139,7 @@ class MangaMoins : HttpSource() {
         val s = status.trim().lowercase(Locale.FRANCE)
         return when {
             s.contains("en cours") -> SManga.ONGOING
-            s.contains("pause") || s.contains("hiatus") -> SManga.HIATUS
+            s.contains("pause") || s.contains("hiatus") -> SManga.UNKNOWN
             s.contains("termin") || s.contains("fin") -> SManga.COMPLETED
             s.contains("annul") -> SManga.CANCELLED
             else -> SManga.UNKNOWN
